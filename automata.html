@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4; /* Warna latar belakang lembut */
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* Border untuk input dan tombol */
+            border-radius: 5px; /* Sudut membulat */
+        }
+        button {
+            background-color: #4CAF50; /* Warna tombol */
+            color: white; /* Warna teks tombol */
+            cursor: pointer; /* Pointer saat hover */
+        }
+        button:hover {
+            background-color: #45a049; /* Warna tombol saat hover */
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px; /* Ukuran font untuk pesan */
+            color: #333; /* Warna teks pesan */
+        }
+    </style>
+</head>
+<body>
+    <h2>Scientific Number Checker</h2>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
+    <p id="message"></p>
+
+    <script>
+        function checkNumber() {
+            const input = document.getElementById('numberInput').value;
+            const regex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
+            const message = regex.test(input) ? "Yes, it is a number" : "No, it is not a number";
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+</body>
+</html>
